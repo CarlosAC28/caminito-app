@@ -1,4 +1,3 @@
-alert("APP JS CARGADO");
 
 function iniciarJornada() {
 
