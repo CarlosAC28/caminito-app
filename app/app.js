@@ -1,4 +1,12 @@
+const clientes = [
 
+    "Prisma",
+    "Richard",
+    "Abasto",
+    "DC",
+    "Tomasco"
+
+];
 function iniciarJornada() {
 
     const ahora = new Date();
@@ -70,15 +78,9 @@ function entregaRealizada() {
 
         <label>Cliente:</label><br>
         <select id="cliente">
-
-<option value="">Seleccione cliente</option>
-
-<option>Prisma</option>
-<option>Richard</option>
-<option>Abasto</option>
-<option>DC</option>
-<option>Tomasco</option>
-
+${clientes.map(cliente =>
+`<option>${cliente}</option>`
+).join("")}
 </select><br><br>
 
         <label>Observaciones:</label><br>
