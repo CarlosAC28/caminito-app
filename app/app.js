@@ -37,16 +37,20 @@ function recorrido() {
     alert("RECORRIDO FUNCIONA");
 }
 
+function recorrido() {
+    alert("RECORRIDO FUNCIONA");
+}
+
 function cobros() {
-    alert("Módulo Cobros en construcción");
+    alert("COBROS FUNCIONA");
 }
 
 function vehiculo() {
-    alert("Módulo Vehículo en construcción");
+    alert("VEHICULO FUNCIONA");
 }
 
 function reportes() {
-    alert("Módulo Reportes en construcción");
+    alert("REPORTES FUNCIONA");
 }
 
 mostrarJornada();
