@@ -52,15 +52,46 @@ function recorrido() {
 `;
 }
 function inicioRecorrido() {
+
+    const ahora = new Date();
+
+    localStorage.setItem(
+        "inicioRecorrido",
+        ahora.toLocaleTimeString()
+    );
+
     alert("Recorrido iniciado");
 }
 
 function entregaRealizada() {
-    alert("Entrega registrada");
+
+    let entregas =
+        Number(localStorage.getItem("entregas")) || 0;
+
+    entregas++;
+
+    localStorage.setItem(
+        "entregas",
+        entregas
+    );
+
+    alert(
+        "Entrega registrada. Total: " +
+        entregas
+    );
 }
 
 function finRecorrido() {
-    alert("Recorrido finalizado");
+
+    const entregas =
+        localStorage.getItem("entregas") || 0;
+
+    alert(
+        "Recorrido finalizado.\nEntregas realizadas: " +
+        entregas
+    );
+
+    localStorage.removeItem("entregas");
 }
 
 function cobros() {
