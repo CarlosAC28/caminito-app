@@ -34,11 +34,34 @@ function mostrarJornada() {
 }
 
 function recorrido() {
-    alert("RECORRIDO FUNCIONA");
+    function recorrido() {
+
+    document.getElementById("estadoJornada").innerHTML = `
+        <h3>📋 Recorrido</h3>
+
+        <button onclick="inicioRecorrido()">
+            🚚 Iniciar Recorrido
+        </button>
+
+        <button onclick="entregaRealizada()">
+            ✅ Entrega Realizada
+        </button>
+
+        <button onclick="finRecorrido()">
+            🏁 Finalizar Recorrido
+        </button>
+    `;
+}
+function inicioRecorrido() {
+    alert("Recorrido iniciado");
 }
 
-function recorrido() {
-    alert("RECORRIDO FUNCIONA");
+function entregaRealizada() {
+    alert("Entrega registrada");
+}
+
+function finRecorrido() {
+    alert("Recorrido finalizado");
 }
 
 function cobros() {
