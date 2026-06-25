@@ -65,6 +65,28 @@ function inicioRecorrido() {
 
 function entregaRealizada() {
 
+    document.getElementById("estadoJornada").innerHTML = `
+        <h3>✅ Registrar Entrega</h3>
+
+        <label>Cliente:</label><br>
+        <input id="cliente" type="text"><br><br>
+
+        <label>Observaciones:</label><br>
+        <textarea id="observaciones"></textarea><br><br>
+
+        <button onclick="guardarEntrega()">
+            💾 Guardar Entrega
+        </button>
+    `;
+}
+function guardarEntrega() {
+
+    const cliente =
+        document.getElementById("cliente").value;
+
+    const observaciones =
+        document.getElementById("observaciones").value;
+
     let entregas =
         Number(localStorage.getItem("entregas")) || 0;
 
@@ -76,8 +98,9 @@ function entregaRealizada() {
     );
 
     alert(
-        "Entrega registrada. Total: " +
-        entregas
+        "Entrega guardada\n\n" +
+        "Cliente: " + cliente +
+        "\nTotal entregas: " + entregas
     );
 }
 
