@@ -1,3 +1,5 @@
+alert("APP JS CARGADO");
+
 function iniciarJornada() {
 
     const ahora = new Date();
@@ -34,23 +36,21 @@ function mostrarJornada() {
 }
 
 function recorrido() {
-    function recorrido() {
-
     document.getElementById("estadoJornada").innerHTML = `
-        <h3>📋 Recorrido</h3>
+    <h3>📋 Recorrido</h3>
 
-        <button onclick="inicioRecorrido()">
-            🚚 Iniciar Recorrido
-        </button>
+    <button onclick="inicioRecorrido()">
+        🚚 Iniciar Recorrido
+    </button>
 
-        <button onclick="entregaRealizada()">
-            ✅ Entrega Realizada
-        </button>
+    <button onclick="entregaRealizada()">
+        ✅ Entrega Realizada
+    </button>
 
-        <button onclick="finRecorrido()">
-            🏁 Finalizar Recorrido
-        </button>
-    `;
+    <button onclick="finRecorrido()">
+        🏁 Finalizar Recorrido
+    </button>
+`;
 }
 function inicioRecorrido() {
     alert("Recorrido iniciado");
