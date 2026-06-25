@@ -34,8 +34,10 @@ function mostrarJornada() {
 }
 
 function recorrido() {
-    alert("Módulo Recorrido en construcción");
+    alert("RECORRIDO FUNCIONA");
 }
+
+
 
 function cobros() {
     alert("Módulo Cobros en construcción");
