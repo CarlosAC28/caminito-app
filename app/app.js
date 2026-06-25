@@ -69,7 +69,17 @@ function entregaRealizada() {
         <h3>✅ Registrar Entrega</h3>
 
         <label>Cliente:</label><br>
-        <input id="cliente" type="text"><br><br>
+        <select id="cliente">
+
+<option value="">Seleccione cliente</option>
+
+<option>Prisma</option>
+<option>Richard</option>
+<option>Abasto</option>
+<option>DC</option>
+<option>Tomasco</option>
+
+</select><br><br>
 
         <label>Observaciones:</label><br>
         <textarea id="observaciones"></textarea><br><br>
@@ -80,6 +90,36 @@ function entregaRealizada() {
     `;
 }
 function guardarEntrega() {
+
+    const cliente =
+        document.getElementById("cliente").value;
+
+    const observaciones =
+        document.getElementById("observaciones").value;
+
+    const hora = new Date().toLocaleTimeString();
+
+    let entregas =
+        JSON.parse(
+            localStorage.getItem("entregasDetalle")
+        ) || [];
+
+    entregas.push({
+        cliente,
+        observaciones,
+        hora
+    });
+
+    localStorage.setItem(
+        "entregasDetalle",
+        JSON.stringify(entregas)
+    );
+
+    alert(
+        "Entrega guardada\n\n" +
+        cliente
+    );
+}
 
     const cliente =
         document.getElementById("cliente").value;
@@ -102,7 +142,7 @@ function guardarEntrega() {
         "Cliente: " + cliente +
         "\nTotal entregas: " + entregas
     );
-}
+
 
 function finRecorrido() {
 
@@ -126,7 +166,32 @@ function vehiculo() {
 }
 
 function reportes() {
-    alert("REPORTES FUNCIONA");
+
+    const entregas =
+        JSON.parse(
+            localStorage.getItem("entregasDetalle")
+        ) || [];
+
+    let html = `
+        <h3>📊 Reporte Diario</h3>
+    `;
+
+    entregas.forEach(entrega => {
+
+        html += `
+            <p>
+            ✅ ${entrega.cliente}<br>
+            🕒 ${entrega.hora}<br>
+            📝 ${entrega.observaciones}
+            </p>
+            <hr>
+        `;
+    });
+
+    document.getElementById(
+        "estadoJornada"
+    ).innerHTML = html;
 }
+    
 
 mostrarJornada();
