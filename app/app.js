@@ -37,8 +37,6 @@ function recorrido() {
     alert("RECORRIDO FUNCIONA");
 }
 
-
-
 function cobros() {
     alert("Módulo Cobros en construcción");
 }
