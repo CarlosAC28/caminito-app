@@ -12,8 +12,12 @@ function iniciarJornada() {
     const ahora = new Date();
 
     const fecha = ahora.toLocaleDateString();
-    const hora = ahora.toLocaleTimeString();
-
+    const hora = ahora.toLocaleTimeString(
+    "es-AR",
+    {
+        hour12: false
+    }
+)
     const datos = {
         fecha,
         hora
@@ -100,7 +104,12 @@ function guardarEntrega() {
         document.getElementById("observaciones").value;
 
     const hora =
-        new Date().toLocaleTimeString();
+        new Date().toLocaleTimeString(
+    "es-AR",
+    {
+        hour12: false
+    }
+)
 
     let entregasDetalle =
         JSON.parse(
