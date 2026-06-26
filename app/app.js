@@ -186,5 +186,12 @@ function reportes() {
     ).innerHTML = html;
 }
     
+function reiniciarDatos() {
 
+    localStorage.clear();
+
+    alert("Datos reiniciados");
+
+    location.reload();
+}
 mostrarJornada();
