@@ -99,14 +99,15 @@ function guardarEntrega() {
     const observaciones =
         document.getElementById("observaciones").value;
 
-    const hora = new Date().toLocaleTimeString();
+    const hora =
+        new Date().toLocaleTimeString();
 
-    let entregas =
+    let entregasDetalle =
         JSON.parse(
             localStorage.getItem("entregasDetalle")
         ) || [];
 
-    entregas.push({
+    entregasDetalle.push({
         cliente,
         observaciones,
         hora
@@ -114,23 +115,13 @@ function guardarEntrega() {
 
     localStorage.setItem(
         "entregasDetalle",
-        JSON.stringify(entregas)
+        JSON.stringify(entregasDetalle)
     );
-
-    alert(
-        "Entrega guardada\n\n" +
-        cliente
-    );
-}
-
-    const cliente =
-        document.getElementById("cliente").value;
-
-    const observaciones =
-        document.getElementById("observaciones").value;
 
     let entregas =
-        Number(localStorage.getItem("entregas")) || 0;
+        Number(
+            localStorage.getItem("entregas")
+        ) || 0;
 
     entregas++;
 
@@ -144,7 +135,7 @@ function guardarEntrega() {
         "Cliente: " + cliente +
         "\nTotal entregas: " + entregas
     );
-
+}
 
 function finRecorrido() {
 
