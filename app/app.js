@@ -86,6 +86,8 @@ ${clientes.map(cliente =>
 `<option>${cliente}</option>`
 ).join("")}
 </select><br><br>
+<label>Recibió:</label><br>
+<input id="recibio" type="text"><br><br>
 
         <label>Observaciones:</label><br>
         <textarea id="observaciones"></textarea><br><br>
@@ -99,6 +101,8 @@ function guardarEntrega() {
 
     const cliente =
         document.getElementById("cliente").value;
+const recibio =
+    document.getElementById("recibio").value;
 
     const observaciones =
         document.getElementById("observaciones").value;
@@ -117,10 +121,11 @@ function guardarEntrega() {
         ) || [];
 
     entregasDetalle.push({
-        cliente,
-        observaciones,
-        hora
-    });
+    cliente,
+    recibio,
+    observaciones,
+    hora
+});
 
     localStorage.setItem(
         "entregasDetalle",
@@ -184,7 +189,8 @@ function reportes() {
             <p>
             ✅ ${entrega.cliente}<br>
             🕒 ${entrega.hora}<br>
-            📝 ${entrega.observaciones}
+👤 ${entrega.recibio}<br>
+📝 ${entrega.observaciones}
             </p>
             <hr>
         `;
